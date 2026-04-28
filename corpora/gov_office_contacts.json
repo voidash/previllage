@@ -1,0 +1,178 @@
+{
+  "_universal_fallback": {
+    "name_np": "हेलो सरकार सूचना केन्द्र",
+    "name_en": "Hello Sarkar Information Centre",
+    "phone": "1111",
+    "phone_label_np": "टोल-फ्री",
+    "url": "https://hellosarkar.gov.np/",
+    "notes": "Toll-free Government of Nepal information helpline; managed by the Office of the Prime Minister. Use this when other office numbers are unreachable or unknown."
+  },
+  "moha.gov.np": {
+    "name_np": "गृह मन्त्रालय",
+    "name_en": "Ministry of Home Affairs",
+    "phones": [
+      {"label_np": "मुख्य कार्यालय", "label_en": "Main", "number": "01-4211208"},
+      {"label_np": "मुख्य कार्यालय (वैकल्पिक)", "label_en": "Main (alt)", "number": "01-4211214"},
+      {"label_np": "टोल-फ्री", "label_en": "Toll-free", "number": "1112"}
+    ],
+    "emails": ["control@moha.gov.np", "gunaso@moha.gov.np"],
+    "address_np": "सिंहदरबार, काठमाडौं",
+    "address_en": "Singhadurbar, Kathmandu",
+    "hours": "सोम-शुक्र 9:00 AM - 5:00 PM",
+    "url": "https://www.moha.gov.np/",
+    "verified": true
+  },
+  "mofa.gov.np": {
+    "name_np": "परराष्ट्र मन्त्रालय",
+    "name_en": "Ministry of Foreign Affairs",
+    "phones": [
+      {"label_np": "मुख्य कार्यालय", "label_en": "General", "number": "01-4200182"}
+    ],
+    "emails": ["info@mofa.gov.np"],
+    "address_np": "सिंहदरबार, काठमाडौं",
+    "address_en": "Singhadurbar, Kathmandu",
+    "hours": "सोम-शुक्र 9:00 AM - 5:00 PM (गर्मीमा), 9:00 AM - 4:00 PM (जाडोमा)",
+    "url": "https://mofa.gov.np/",
+    "verified": true
+  },
+  "nepalpassport.gov.np": {
+    "name_np": "राहदानी विभाग",
+    "name_en": "Department of Passports",
+    "phones": [
+      {"label_np": "हटलाइन", "label_en": "Hotline", "number": "01-5970330"},
+      {"label_np": "महानिर्देशक", "label_en": "Director General", "number": "01-5970329"},
+      {"label_np": "सूचना अधिकारी", "label_en": "Information Officer", "number": "9851424502"}
+    ],
+    "emails": ["info@nepalpassport.gov.np", "communication@nepalpassport.gov.np"],
+    "address_np": "त्रिपुरेश्वर, काठमाडौं",
+    "address_en": "Tripureshwor, Kathmandu",
+    "hours": "सोम-शुक्र 9:00 AM - 5:00 PM",
+    "url": "https://nepalpassport.gov.np/",
+    "verified": true,
+    "aliases": ["passport.gov.np", "passportnepal.gov.np", "dop.gov.np"]
+  },
+  "dotm.gov.np": {
+    "name_np": "यातायात व्यवस्था विभाग",
+    "name_en": "Department of Transport Management",
+    "phones": [
+      {"label_np": "सूचना अधिकारी", "label_en": "Information Officer", "number": "01-4574921"},
+      {"label_np": "सूचना अधिकारी (मोबाइल)", "label_en": "Information Officer (mobile)", "number": "9851253135"}
+    ],
+    "emails": ["gunaso@dotm.gov.np"],
+    "address_np": "मीनभवन, काठमाडौं",
+    "address_en": "Minbhavan, Kathmandu",
+    "hours": "सोम-शुक्र 9:00 AM - 5:00 PM (गर्मी), 4:00 PM (जाडो)",
+    "url": "https://www.dotm.gov.np/",
+    "verified": true,
+    "notes_np": "सवारी चालक अनुमतिपत्र, सवारी दर्ता सम्बन्धी"
+  },
+  "ird.gov.np": {
+    "name_np": "आन्तरिक राजस्व विभाग",
+    "name_en": "Inland Revenue Department",
+    "phones": [
+      {"label_np": "मुख्य कार्यालय", "label_en": "Main", "number": "01-5970176"},
+      {"label_np": "सूचना अधिकारी", "label_en": "Information Officer", "number": "9851215939"},
+      {"label_np": "IT सहायता", "label_en": "IT Support", "number": "9762118258"}
+    ],
+    "emails": ["serviceird@ird.gov.np"],
+    "address_np": "लाजिम्पाट, काठमाडौं",
+    "address_en": "Lazimpat, Kathmandu",
+    "hours": "सोम-शुक्र 9:00 AM - 5:00 PM (गर्मी), 4:00 PM (जाडो)",
+    "url": "https://ird.gov.np/",
+    "verified": true,
+    "notes_np": "PAN, VAT, आयकर, अन्तःशुल्क सम्बन्धी"
+  },
+  "dofe.gov.np": {
+    "name_np": "वैदेशिक रोजगार विभाग",
+    "name_en": "Department of Foreign Employment",
+    "phones": [
+      {"label_np": "मुख्य कार्यालय", "label_en": "Main", "number": "01-4792671"},
+      {"label_np": "सूचना अधिकारी", "label_en": "Information Officer", "number": "9851112315"},
+      {"label_np": "श्रम स्वीकृति शाखा", "label_en": "Labor Approval Branch", "number": "9768998473"},
+      {"label_np": "उद्धार शाखा", "label_en": "Relief & Rescue Branch", "number": "9765013774"}
+    ],
+    "emails": ["info@dofe.gov.np"],
+    "address_np": "ताहाचल, काठमाडौं",
+    "address_en": "Tahachal, Kathmandu",
+    "hours": "सोम-शुक्र 9:00 AM - 5:00 PM (गर्मी), 4:00 PM (जाडो)",
+    "url": "https://dofe.gov.np/",
+    "verified": true
+  },
+  "customs.gov.np": {
+    "name_np": "भन्सार विभाग",
+    "name_en": "Department of Customs",
+    "phones": [
+      {"label_np": "गुनासो अधिकारी", "label_en": "Complaint Officer", "number": "9851353353"}
+    ],
+    "emails": ["dg@customs.gov.np", "csd@customs.gov.np"],
+    "address_np": "त्रिपुरेश्वर, काठमाडौं",
+    "address_en": "Tripureshwor, Kathmandu",
+    "hours": "सोम-शुक्र 9:00 AM - 5:00 PM (गर्मी), 4:00 PM (जाडो)",
+    "url": "https://www.customs.gov.np/",
+    "verified": true
+  },
+  "nepalpolice.gov.np": {
+    "name_np": "नेपाल प्रहरी",
+    "name_en": "Nepal Police",
+    "phones": [
+      {"label_np": "प्रहरी आपतकालीन", "label_en": "Police Emergency", "number": "100"},
+      {"label_np": "टोल-फ्री", "label_en": "Toll-free", "number": "16600141516"},
+      {"label_np": "प्रधान कार्यालय", "label_en": "Headquarters", "number": "01-5719900"}
+    ],
+    "emails": ["spokesperson@nepalpolice.gov.np"],
+    "address_np": "नक्साल, काठमाडौं",
+    "address_en": "Naxal, Kathmandu",
+    "url": "https://www.nepalpolice.gov.np/",
+    "verified": true
+  },
+  "election.gov.np": {
+    "name_np": "निर्वाचन आयोग",
+    "name_en": "Election Commission of Nepal",
+    "phones": [],
+    "emails": [],
+    "address_np": "काठमाडौं",
+    "url": "https://election.gov.np/",
+    "verified": false,
+    "notes_np": "वेबसाइट: cert error हुने सक्छ; हेलो सरकार 1111 बाट अद्यावधिक नम्बर लिनुहोस्"
+  },
+  "nta.gov.np": {
+    "name_np": "नेपाल दूरसञ्चार प्राधिकरण",
+    "name_en": "Nepal Telecommunications Authority",
+    "phones": [],
+    "emails": [],
+    "address_np": "काठमाडौं",
+    "url": "https://nta.gov.np/",
+    "verified": false,
+    "notes_np": "सम्पर्क नम्बर वेबसाइटमा हेर्नुहोस्; SIM, फोन रजिष्ट्रेसन सम्बन्धी"
+  },
+  "neb.gov.np": {
+    "name_np": "राष्ट्रिय परीक्षा बोर्ड",
+    "name_en": "National Examination Board (NEB)",
+    "phones": [],
+    "emails": [],
+    "address_np": "सानोठिमी, भक्तपुर",
+    "url": "https://www.neb.gov.np/",
+    "verified": false,
+    "notes_np": "SEE र कक्षा 12 परीक्षा सम्बन्धी; वेबसाइटमा हेर्नुहोस्"
+  },
+  "moict.gov.np": {
+    "name_np": "सञ्चार तथा सूचना प्रविधि मन्त्रालय",
+    "name_en": "Ministry of Communications and Information Technology",
+    "phones": [],
+    "emails": [],
+    "address_np": "सिंहदरबार, काठमाडौं",
+    "url": "https://www.moict.gov.np/",
+    "verified": false
+  },
+  "nid.gov.np": {
+    "name_np": "राष्ट्रिय परिचयपत्र तथा पञ्जीकरण विभाग",
+    "name_en": "Department of National ID & Civil Registration (DOCRN)",
+    "phones": [],
+    "emails": [],
+    "address_np": "काठमाडौं",
+    "url": "https://docrn.gov.np/",
+    "verified": false,
+    "aliases": ["docrn.gov.np", "nagrik.app.gov.np"],
+    "notes_np": "राष्ट्रिय परिचयपत्र, बायोमेट्रिक दर्ता सम्बन्धी"
+  }
+}
