@@ -62,11 +62,19 @@ TIMEOUT_S = 90
 # ---- Model backends --------------------------------------------------------
 
 
-class MeridianBackend:
-    """Calls Meridian's /v1/messages (Anthropic API shape)."""
+class AnthropicShapeBackend:
+    """Generic Anthropic Messages-shape backend.
 
-    def __init__(self, model_id: str):
+    Both Meridian (local OAuth proxy for Claude Max) and Kimi (Moonshot's
+    api.kimi.com endpoint) speak the same Messages API; only base_url and
+    api_key differ.
+    """
+
+    def __init__(self, base_url: str, api_key: str, model_id: str, label: str = ""):
+        self.base_url = base_url.rstrip("/")
+        self.api_key = api_key
         self.model_id = model_id
+        self.label = label or base_url
 
     def chat(self, system: str, user: str, max_tokens: int = MAX_TOKENS) -> str:
         payload = json.dumps(
@@ -81,11 +89,11 @@ class MeridianBackend:
         for attempt in range(MAX_RETRIES):
             try:
                 req = urllib.request.Request(
-                    f"{MERIDIAN_URL}/v1/messages",
+                    f"{self.base_url}/v1/messages",
                     data=payload,
                     headers={
                         "Content-Type": "application/json",
-                        "x-api-key": "x",
+                        "x-api-key": self.api_key,
                         "anthropic-version": "2023-06-01",
                     },
                     method="POST",
@@ -110,18 +118,49 @@ class MeridianBackend:
             except (urllib.error.URLError, TimeoutError, OSError, json.JSONDecodeError) as e:
                 last_err = e
                 time.sleep(2 ** attempt)
-        raise RuntimeError(f"Meridian call failed after {MAX_RETRIES} attempts: {last_err}")
+        raise RuntimeError(
+            f"{self.label} call failed after {MAX_RETRIES} attempts: {last_err}"
+        )
+
+
+def _read_brush_provider(provider_id: str) -> dict:
+    """Load a provider config from ~/.config/brush/brush.json (key + base_url)."""
+    path = Path.home() / ".config" / "brush" / "brush.json"
+    if not path.exists():
+        raise RuntimeError(f"brush config not found: {path}")
+    with path.open(encoding="utf-8") as f:
+        cfg = json.load(f)
+    prov = cfg.get("providers", {}).get(provider_id)
+    if not prov:
+        raise RuntimeError(
+            f"provider {provider_id!r} not present in {path}; available: "
+            f"{list(cfg.get('providers', {}).keys())}"
+        )
+    return prov
 
 
 def make_backend(spec: str):
     if spec.startswith("meridian:"):
-        return MeridianBackend(spec[len("meridian:"):])
+        return AnthropicShapeBackend(
+            base_url=MERIDIAN_URL,
+            api_key="x",
+            model_id=spec[len("meridian:"):],
+            label="meridian",
+        )
+    if spec.startswith("kimi:"):
+        prov = _read_brush_provider("kimi")
+        return AnthropicShapeBackend(
+            base_url=prov["base_url"],
+            api_key=prov["api_key"],
+            model_id=spec[len("kimi:"):],
+            label="kimi",
+        )
     if spec.startswith("mlx:"):
         raise NotImplementedError(
             "MLX backend not yet implemented. Stub for: " + spec[len("mlx:"):]
         )
     raise ValueError(
-        f"unknown model spec: {spec!r}. Use 'meridian:<id>' or 'mlx:<id>'."
+        f"unknown model spec: {spec!r}. Use 'meridian:<id>', 'kimi:<id>', or 'mlx:<id>'."
     )
 
 
@@ -155,11 +194,29 @@ def build_user_prompt(question: str, chunks: list) -> str:
 # ---- Metrics ---------------------------------------------------------------
 
 
-URL_RE = re.compile(r"\[(https?://[^\]\s]+)\]")
+URL_BRACKETED_RE = re.compile(r"\[(https?://[^\]\s]+)\]")
+URL_BARE_RE = re.compile(r"https?://[^\s\)\]\>'\"`]+")
+TRAILING_PUNCT = ",.;:!?)>\"'"
 
 
 def extract_citations(text: str) -> list[str]:
-    return list(dict.fromkeys(URL_RE.findall(text or "")))  # dedup, preserve order
+    """Extract cited URLs from model output.
+
+    Catches both Sonnet-style `[https://...]` and Kimi-style bare URLs
+    (often with a `[1]` reference number elsewhere). Trailing punctuation
+    is stripped. Order preserved, deduplicated.
+    """
+    if not text:
+        return []
+    raw: list[str] = []
+    raw.extend(URL_BRACKETED_RE.findall(text))
+    raw.extend(URL_BARE_RE.findall(text))
+    cleaned: list[str] = []
+    for u in raw:
+        u = u.rstrip(TRAILING_PUNCT)
+        if u:
+            cleaned.append(u)
+    return list(dict.fromkeys(cleaned))
 
 
 # Refusal-detector patterns. We scan for any of these in the model output.
