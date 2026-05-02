@@ -57,6 +57,8 @@ def is_english(source: str | None, text: str) -> bool:
     src = source or ""
     if ENGLISH_SOURCE_DENY.search(src):
         return False
+    if not ENGLISH_SOURCE_ALLOW.search(src):
+        return False
     # Belt-and-suspenders — even allowed sources occasionally smuggle in
     # non-English. Require >= 3 distinct English function words in
     # text >= 50 chars.
@@ -74,6 +76,13 @@ def main() -> int:
     ap.add_argument("--min-chars", type=int, default=20)
     ap.add_argument("--max-chars-question", type=int, default=2000)
     ap.add_argument("--max-chars-answer", type=int, default=4000)
+    # Per-source cap prevents the streaming-order winner from dominating.
+    # TULU 3 streams flan_v2_converted first; without a cap we never see
+    # numinamath / no_robots / sciriff / etc. before hitting the read budget.
+    ap.add_argument("--per-source-cap", type=int, default=400,
+                    help="max records to keep per src_dataset (default 400)")
+    ap.add_argument("--max-stream", type=int, default=250_000,
+                    help="cap raw streaming reads (default 250k of TULU 3's 939k)")
     args = ap.parse_args()
 
     logging.basicConfig(
@@ -87,18 +96,30 @@ def main() -> int:
         return 1
 
     # Stream the dataset (it's ~939K records, no need to download all).
+    # Shuffle with a buffer so we don't see all of flan_v2_converted first
+    # (TULU 3's shard order puts flan early; without shuffling, the per-source
+    # cap fills on flan + no_robots and starves us of numinamath, sciriff, etc).
+    #
+    # CAVEAT: TULU 3's parquet shards are source-clustered AND streaming.shuffle()
+    # only randomizes within the currently-loaded shard's buffered window. So a
+    # single seed lands you on whichever cluster the seed's shard contains
+    # (e.g. seed=42 → numinamath_tir cluster). For a true cross-source mix call
+    # this script multiple times with different seeds and concatenate, OR pull
+    # each subset (numinamath, no_robots, flan, sciriff, ...) explicitly.
     logging.info("streaming allenai/tulu-3-sft-mixture …")
     ds = load_dataset("allenai/tulu-3-sft-mixture", split="train", streaming=True)
+    ds = ds.shuffle(buffer_size=20_000, seed=args.seed)
 
     rng = random.Random(args.seed)
     # Reservoir-sample 5x our target so we can filter for length, then pick n.
     pool_target = args.n * 5
     pool: list[dict] = []
+    per_source_count: dict[str, int] = {}
     seen = 0
 
     for rec in ds:
         seen += 1
-        if seen > 100_000:  # cap streaming time
+        if seen > args.max_stream:
             break
         msgs = rec.get("messages") or []
         # First user message + first assistant message
@@ -116,15 +137,19 @@ def main() -> int:
             continue
         if len(a) > args.max_chars_answer:
             continue
-        # English-only filter — drops oasst1_converted (multilingual) and any
-        # record that doesn't have at least 3 English function words.
+        # English-only filter — requires source matches ALLOW (drops sources
+        # not on the curated English list) AND has English function words.
         if not is_english(rec.get("source"), q + " " + a):
             continue
+        src = rec.get("source") or "tulu3"
+        if per_source_count.get(src, 0) >= args.per_source_cap:
+            continue
+        per_source_count[src] = per_source_count.get(src, 0) + 1
         pool.append(
             {
                 "question": q,
                 "answer": a,
-                "src_dataset": rec.get("source") or "tulu3",
+                "src_dataset": src,
             }
         )
         if len(pool) >= pool_target:
@@ -152,11 +177,17 @@ def main() -> int:
             }
             f.write(json.dumps(rec, ensure_ascii=False) + "\n")
 
+    sampled_by_src: dict[str, int] = {}
+    for r in sampled:
+        sampled_by_src[r["src_dataset"]] = sampled_by_src.get(r["src_dataset"], 0) + 1
     print(f"\n=== TULU subset pull summary ===", file=sys.stderr)
     print(f"  streamed : {seen}", file=sys.stderr)
     print(f"  pool     : {len(pool)}", file=sys.stderr)
     print(f"  sampled  : {len(sampled)}", file=sys.stderr)
     print(f"  output   : {out_path}", file=sys.stderr)
+    print(f"  sampled by src_dataset (top 12):", file=sys.stderr)
+    for src, cnt in sorted(sampled_by_src.items(), key=lambda x: -x[1])[:12]:
+        print(f"    {cnt:>5} {src}", file=sys.stderr)
     return 0
 
 
