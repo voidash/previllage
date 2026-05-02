@@ -311,6 +311,13 @@ fn classify_word(word: &str) -> WordKind {
     }
 
     // 1) Any Devanagari Unicode -> already converted, keep.
+    //    NOTE: hybrid tokens like `)ा*धकरण` (should be प्राधिकरण) also have
+    //    Devanagari and would Keep here. We don't try to recover them via
+    //    the Preeti char-map: the embedded Devanagari chars came from a
+    //    DIFFERENT font in the source PDF (Kalimati/Unicode), and re-running
+    //    them through Preeti map produces a different garbage. Detection +
+    //    drop happens in language.rs::classify (Devanagari + mojibake-tokens
+    //    -> MojibakeSuspected -> chunk dropped by indexer).
     if word.chars().any(|c| ('\u{0900}'..='\u{097F}').contains(&c)) {
         return WordKind::Keep;
     }
