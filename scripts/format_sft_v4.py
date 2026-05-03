@@ -149,7 +149,12 @@ def format_english(rec: dict) -> dict | None:
             {"role": "user", "content": q},
             {"role": "assistant", "content": a},
         ],
-        "source": rec.get("source") or "english_replay",
+        # NOTE: hardcode "english_replay" rather than passing through
+        # rec.get("source"). train_sft_v1.py's spike-gate at line 729 hard-
+        # codes the literal string `english_replay` for the catastrophic-
+        # forgetting check; if we emit "v4_english_replay" the gate never
+        # fires (codex caught this in the v4 launch review).
+        "source": "english_replay",
         "lang": "english",
         "category": "other",
     }
