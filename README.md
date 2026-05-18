@@ -27,11 +27,19 @@ evidence is missing.
 | Nepali ASR demo | <https://huggingface.co/spaces/voidash/nepali-fastconformer-demo> | FastConformer experiment for Nepali speech. |
 | Nepali TTS demo | <https://huggingface.co/spaces/ampixa/real-nepali-tts> | Piper/real-Nepali TTS demo. |
 | TTS model | <https://huggingface.co/ampixa/real-nepali-v0.2-kala> | Public Kala voice model. |
-| Source repository | <https://github.com/voidash/gemma-god> | This repo. |
+| Source repository | <https://github.com/voidash/previllage> | This repo. |
 
 The Gemma SFT adapters and GGUF builds are staged on Hugging Face. They should
 be made public for a submission or external review before relying on the links
 from a public writeup.
+
+## Start Here For Reviewers
+
+- Project map and code layout: [docs/README.md](docs/README.md)
+- Links to share publicly: [docs/LINKS.md](docs/LINKS.md)
+- Fine-tuning and eval trail: [docs/finetuning/README.md](docs/finetuning/README.md)
+- Product/RAG contract: [docs/architecture/SERVICE_NAVIGATOR_MODUS_OPERANDI.md](docs/architecture/SERVICE_NAVIGATOR_MODUS_OPERANDI.md)
+- Corpus release plan: [docs/CORPUS_RELEASE_PLAN.md](docs/CORPUS_RELEASE_PLAN.md)
 
 ## What It Does
 
@@ -212,6 +220,10 @@ index-building work happens centrally.
 ## Repository Layout
 
 ```text
+docs/                           Project docs, runbooks, submission notes
+  README.md                     Judge-readable map of the repo
+  LINKS.md                      Public links and release-status checklist
+  finetuning/README.md          Fine-tuning path, evals, scripts, artifacts
 server/                         FastAPI RAG, resolver, voice, admin endpoints
 frontend/                       React/Vite web, chat, interview, WhatsApp, kiosk UI
 whatsapp/                       Baileys bridge for real WhatsApp text/audio
@@ -219,10 +231,7 @@ scripts/                        Crawling, eval, SFT, voice, deployment utilities
 src/                            Older Rust PDF/corpus pipeline
 recipes/                        Crawl/source recipes for government sites
 assets/                         Curated public screenshots and diagrams
-SERVICE_NAVIGATOR_MODUS_OPERANDI.md
-RAG_HARDENING_STATUS.md
-SFT_V6_PLANNER_COMPOSER.md
-PI_E2B_LLAMA_CPP_RUNBOOK.md
+corpora/                        Small public source registry files only
 ```
 
 Raw videos, temporary renders, local auth state, databases, checkpoints, and

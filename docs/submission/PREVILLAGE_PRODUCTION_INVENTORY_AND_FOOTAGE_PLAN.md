@@ -30,9 +30,9 @@ Local repo: `/Users/cdjk/github/llm/gemma-god`
 
 Useful files:
 
-- `SERVICE_NAVIGATOR_MODUS_OPERANDI.md` - canonical behavior.
+- `docs/architecture/SERVICE_NAVIGATOR_MODUS_OPERANDI.md` - canonical behavior.
 - `HACKATHON_DEMO_RUNBOOK.md` - documented demo-ready state.
-- `RAG_HARDENING_STATUS.md` - Jiri and contact-ranking history.
+- `docs/architecture/RAG_HARDENING_STATUS.md` - Jiri and contact-ranking history.
 - `SFT_V5_POSTMORTEM_AND_NEXT_PASS.md` - rigorous failure story; v5 is not safe.
 - `PREVILLAGE_DEMO_V0_COORDINATION.md` - voice/WhatsApp/kiosk pipeline.
 - `frontend/src/routes/WhatsAppDemo.tsx` - current PreVillage WhatsApp-style demo UI.
@@ -51,7 +51,7 @@ What to film:
 
 - `HACKATHON_DEMO_RUNBOOK.md` with the 899 sources / 270,509 chunks / 14 pass lines.
 - `server/main.py` prompt rules around cited-source-only answers and uncertainty.
-- `SERVICE_NAVIGATOR_MODUS_OPERANDI.md` showing resolver/intake before RAG.
+- `docs/architecture/SERVICE_NAVIGATOR_MODUS_OPERANDI.md` showing resolver/intake before RAG.
 - local screenshots already in repo: `chat-after-click.png`, `admin-expanded.png`,
   `interview-ne-final.png`, `whatsapp-demo-local.png`.
 - the frontend routes list to show this is a real product surface, not slides.

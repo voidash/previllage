@@ -4,7 +4,7 @@ Snapshot: 2026-05-13.
 
 This is the current training recipe for SpeakGov as a government-service
 navigator. It is based on the product contract in
-`SERVICE_NAVIGATOR_MODUS_OPERANDI.md` and the latest SFT research pass.
+`docs/architecture/SERVICE_NAVIGATOR_MODUS_OPERANDI.md` and the latest SFT research pass.
 
 ## 2026-05-14 Status Update
 

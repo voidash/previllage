@@ -8,7 +8,7 @@ live demo, and public artifacts.
 
 Architecture source of truth:
 
-- `PREVILLAGE_PUBLIC_ARCHITECTURE.md`
+- `docs/architecture/PREVILLAGE_PUBLIC_ARCHITECTURE.md`
 
 ## Judging Target
 
@@ -151,7 +151,7 @@ ASR artifacts:
 
 Pi voice benchmark:
 
-- `PREVILLAGE_PI_VOICE_BENCHMARK_2026_05_17.md`
+- `docs/runbooks/PREVILLAGE_PI_VOICE_BENCHMARK_2026_05_17.md`
 - Safe claim:
   - Gemma E2B Q4 on Pi 5: roughly 6-8 generated tok/s.
   - TTS warm response on Pi: about 1.1-1.4 s server-side.

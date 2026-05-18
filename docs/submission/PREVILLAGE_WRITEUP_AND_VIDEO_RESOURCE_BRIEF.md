@@ -44,7 +44,7 @@ framing should be "pre-village": public-service knowledge before privilege.
 
 Do not describe this as a generic RAG chatbot.
 
-The product rule from `SERVICE_NAVIGATOR_MODUS_OPERANDI.md` is stronger:
+The product rule from `docs/architecture/SERVICE_NAVIGATOR_MODUS_OPERANDI.md` is stronger:
 PreVillage is a government-service navigator. It should do intake first, resolve
 service/action/location/case type, ask compact follow-ups when needed, use chat
 memory, route sources based on the question, include contacts and uncertainty,
@@ -63,8 +63,8 @@ These claims are supported by local docs or implementation.
 
 Sources:
 
-- `SERVICE_NAVIGATOR_MODUS_OPERANDI.md`
-- `RAG_HARDENING_STATUS.md`
+- `docs/architecture/SERVICE_NAVIGATOR_MODUS_OPERANDI.md`
+- `docs/architecture/RAG_HARDENING_STATUS.md`
 - `HACKATHON_DEMO_RUNBOOK.md`
 - `server/navigator.py`
 - `server/main.py`

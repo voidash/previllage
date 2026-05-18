@@ -33,7 +33,7 @@ Implemented surfaces found in this repo:
 
 | Claim | Evidence |
 |---|---|
-| Resolver-first service navigator | `server/navigator.py`, `SERVICE_NAVIGATOR_MODUS_OPERANDI.md` |
+| Resolver-first service navigator | `server/navigator.py`, `docs/architecture/SERVICE_NAVIGATOR_MODUS_OPERANDI.md` |
 | Query/retrieve/stream API | `server/main.py` exposes `/retrieve`, `/query`, `/query/stream` |
 | Admin stats and reindexing | `server/main.py` exposes `/admin/info`, `/admin/reindex` |
 | Voice API | `server/main.py` exposes `/voice/transcribe`, `/voice/synthesize`, `/voice/providers` |
@@ -48,8 +48,8 @@ Implemented surfaces found in this repo:
 | Crawler / extraction stack | Rust crawler in `src/crawler_v2/*`; batch scripts in `scripts/run_crawl_batch.py` |
 | Corpus health/self-healing audit | `scripts/corpus_health_audit.py`, `PREVILLAGE_RAG_ARCHITECTURE_FOR_VIDEO.md` |
 | Source discovery | `scripts/seed_moha_office_sources.py`, `scripts/seed_dao_sources.py` |
-| Eval discipline | `scripts/service_navigator_pipeline_audit.py`, `eval/reports/*`, `SFT_V6_PLANNER_COMPOSER.md` |
-| Pi edge lane | `PI.md`, `PI_E2B_LLAMA_CPP_RUNBOOK.md`, `PREVILLAGE_PI_VOICE_BENCHMARK_2026_05_17.md` |
+| Eval discipline | `scripts/service_navigator_pipeline_audit.py`, `eval/reports/*`, `docs/finetuning/SFT_V6_PLANNER_COMPOSER.md` |
+| Pi edge lane | `docs/runbooks/PI.md`, `docs/runbooks/PI_E2B_LLAMA_CPP_RUNBOOK.md`, `docs/runbooks/PREVILLAGE_PI_VOICE_BENCHMARK_2026_05_17.md` |
 | Video capture scaffolding | `video_rag_recording/`, `video_pi_recording/`, `video_training_replay/` |
 
 Important: the codebase supports the "real system" claim. It also shows that

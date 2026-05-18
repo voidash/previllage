@@ -23,16 +23,16 @@ crawler v2 daemon keeps fresh. Current demo scope: **Jiri Municipality**
 
 | Doc | Read when | What it covers |
 |---|---|---|
-| `SERVICE_NAVIGATOR_MODUS_OPERANDI.md` | **always, first** | canonical product behavior: intake before RAG, follow-up rules, memory, source routing, human-source policy, gap logging |
-| `PROACTIVE_WHATSAPP_OUTREACH.md` | changing missing-info escalation or WhatsApp contact routing | operator-reviewed outreach queue: draft from source gap, official contact discovery, Baileys send, audit/safety rules |
-| `SFT_V5_POSTMORTEM_AND_NEXT_PASS.md` | before any SFT/data/eval work | 2026-05-13 v5 run result, smoke failures, and the new planner/composer SFT direction |
+| `docs/architecture/SERVICE_NAVIGATOR_MODUS_OPERANDI.md` | **always, first** | canonical product behavior: intake before RAG, follow-up rules, memory, source routing, human-source policy, gap logging |
+| `docs/runbooks/PROACTIVE_WHATSAPP_OUTREACH.md` | changing missing-info escalation or WhatsApp contact routing | operator-reviewed outreach queue: draft from source gap, official contact discovery, Baileys send, audit/safety rules |
+| `docs/finetuning/SFT_V5_POSTMORTEM_AND_NEXT_PASS.md` | before any SFT/data/eval work | 2026-05-13 v5 run result, smoke failures, and the new planner/composer SFT direction |
 | `AGENTS.md` | any coding-agent session | shortest repo-level instruction pointer for future agents |
-| `STORY.md` | starting fresh | plain-English narrative of how we got here, the CPT-v1 failure, why we pivoted to RAG |
-| `PIPELINE.md` | designing/changing the RAG pipeline | retrieval architecture, polling cadence, recipe schema, eval-set plan |
-| `CRAWLER.md` | touching `src/crawler_v2/*` | full crawler design: types, schema, frontier, recipe loader, daemon |
-| `BENCHMARKS.md` | running or interpreting evals | every benchmark we run with samples + baseline & CPT v1 numbers + the gaps |
-| `DOCUMENT.md` | historical context for a specific decision | engineering log, decisions, dead-ends |
-| `PLAN.md` | mostly historical | original training-first plan; superseded by PIPELINE.md but useful for "why did we…" |
+| `docs/archive/STORY.md` | starting fresh | plain-English narrative of how we got here, the CPT-v1 failure, why we pivoted to RAG |
+| `docs/architecture/PIPELINE.md` | designing/changing the RAG pipeline | retrieval architecture, polling cadence, recipe schema, eval-set plan |
+| `docs/architecture/CRAWLER.md` | touching crawler code | crawler design: types, schema, frontier, recipe loader, daemon |
+| `docs/finetuning/BENCHMARKS.md` | running or interpreting evals | every benchmark we run with samples + baseline & CPT v1 numbers + the gaps |
+| `docs/archive/DOCUMENT.md` | historical context for a specific decision | engineering log, decisions, dead-ends |
+| `docs/archive/PLAN.md` | mostly historical | original training-first plan; superseded by pipeline/RAG docs but useful for "why did we..." |
 | `README.md` | last-resort reader | high-level pitch |
 
 ---

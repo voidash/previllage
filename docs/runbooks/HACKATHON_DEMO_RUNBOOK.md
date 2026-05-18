@@ -20,7 +20,7 @@ Live kiosk voice demo:
 
 Pi edge model demo:
 
-- Runbook: `PI_E2B_LLAMA_CPP_RUNBOOK.md`.
+- Runbook: `docs/runbooks/PI_E2B_LLAMA_CPP_RUNBOOK.md`.
 - Target: `cdjk@<pi-tailnet-ip>` on Tailscale. The shorthand `cdjk@pi` does not
   currently resolve from this Mac.
 - Runtime: `llama.cpp` `llama-server` on port `8081`.

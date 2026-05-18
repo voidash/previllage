@@ -106,7 +106,7 @@ Source docs:
 - `STORY.md`
 - `HACKATHON_VIDEO_STORY_PRIVILEGE.md`
 - `HACKATHON_VIDEO_SCRIPT_PREVILLAGE_V1_GEMMA.md`
-- `SERVICE_NAVIGATOR_MODUS_OPERANDI.md`
+- `docs/architecture/SERVICE_NAVIGATOR_MODUS_OPERANDI.md`
 
 Claims:
 
@@ -123,7 +123,7 @@ Source docs:
 
 - `PIPELINE.md`
 - `CRAWLER.md`
-- `RAG_HARDENING_STATUS.md`
+- `docs/architecture/RAG_HARDENING_STATUS.md`
 - `PREVILLAGE_RAG_ARCHITECTURE_FOR_VIDEO.md`
 - `HACKATHON_DEMO_RUNBOOK.md`
 
@@ -151,8 +151,8 @@ Numbers we can safely cite from docs:
 
 Source docs:
 
-- `SERVICE_NAVIGATOR_MODUS_OPERANDI.md`
-- `RAG_HARDENING_STATUS.md`
+- `docs/architecture/SERVICE_NAVIGATOR_MODUS_OPERANDI.md`
+- `docs/architecture/RAG_HARDENING_STATUS.md`
 - `scripts/service_navigator_pipeline_audit.py`
 - `server/navigator.py`
 - `server/main.py`
@@ -177,7 +177,7 @@ Source docs:
 - `BENCHMARKS.md`
 - `SFT_V2_RESULTS.md`
 - `SFT_V5_POSTMORTEM_AND_NEXT_PASS.md`
-- `SFT_V6_PLANNER_COMPOSER.md`
+- `docs/finetuning/SFT_V6_PLANNER_COMPOSER.md`
 - `FINETUNE_RESEARCH.md`
 
 Claims:
@@ -231,9 +231,9 @@ Claims:
 Source docs:
 
 - `SFT_V2_RESULTS.md`
-- `SFT_V6_PLANNER_COMPOSER.md`
-- `PI_E2B_LLAMA_CPP_RUNBOOK.md`
-- `PREVILLAGE_PI_VOICE_BENCHMARK_2026_05_17.md`
+- `docs/finetuning/SFT_V6_PLANNER_COMPOSER.md`
+- `docs/runbooks/PI_E2B_LLAMA_CPP_RUNBOOK.md`
+- `docs/runbooks/PREVILLAGE_PI_VOICE_BENCHMARK_2026_05_17.md`
 
 Claims:
 
@@ -252,7 +252,7 @@ Claims:
 Source docs:
 
 - `HACKATHON_DEMO_RUNBOOK.md`
-- `PREVILLAGE_PI_VOICE_BENCHMARK_2026_05_17.md`
+- `docs/runbooks/PREVILLAGE_PI_VOICE_BENCHMARK_2026_05_17.md`
 - `PREVILLAGE_WRITEUP_AND_VIDEO_RESOURCE_BRIEF.md`
 
 Claims:

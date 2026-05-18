@@ -100,6 +100,15 @@ remotion/public/project/
 *.local
 local_settings.*
 
+# Submission/research scratch captures not intended for GitHub.
+/kaggle_*_innertext.txt
+/gemma_4_good_overview_innertext.txt
+/previllage_kaggle_under_1500_textedit.txt
+/cited
+/future
+/officer
+/reviewed
+
 # --- Session-local agent / launch artifacts (may contain instance IDs, tokens) ---
 .aws-launches/
 .claude/

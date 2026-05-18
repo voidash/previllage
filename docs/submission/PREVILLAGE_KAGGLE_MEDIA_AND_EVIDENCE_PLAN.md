@@ -32,7 +32,7 @@ Safe media rule:
 | Media | What it proves | Source / capture target | Notes |
 |---|---|---|---|
 | Cover image | PreVillage is public-service knowledge before privilege | Designed still or product composite | Should show citizen/service navigation, not a generic chatbot |
-| Architecture diagram | Resolver-first RAG, source routing, human loop, ASR/TTS | `PREVILLAGE_PUBLIC_ARCHITECTURE.md` | Keep one screen, readable in gallery |
+| Architecture diagram | Resolver-first RAG, source routing, human loop, ASR/TTS | `docs/architecture/PREVILLAGE_PUBLIC_ARCHITECTURE.md` | Keep one screen, readable in gallery |
 | Source registry / corpus audit | The RAG is maintained, not a pile of PDFs | crawler/source registry/audit terminal or admin screen | Include 1,071 sources, 46,051 docs, 272,718 chunks if still current |
 | Self-healing loop | Missing sources become crawl/review/interview tasks | gap log, health audit, or admin review screenshot | Caption: evidence-path repair, not model magic |
 | Jiri contact answer | Local factual routing works | `helpdesk.ampixa.com/chat` | Example: mayor/helpdesk/information officer from `jirimun.gov.np` |

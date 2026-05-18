@@ -81,7 +81,7 @@ at a flat refusal if a responsible office can be identified. It should:
 - find the likely office/contact from official sources;
 - offer to route the question without sharing private citizen details;
 - use the operator-reviewed WhatsApp outreach flow in
-  `PROACTIVE_WHATSAPP_OUTREACH.md` for real messages;
+  `docs/runbooks/PROACTIVE_WHATSAPP_OUTREACH.md` for real messages;
 - store any official reply as named practical guidance only after verification.
 
 Do not auto-message officials directly from a public query failure. That path

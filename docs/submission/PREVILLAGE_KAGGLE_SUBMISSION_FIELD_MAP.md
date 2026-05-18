@@ -23,7 +23,7 @@ A Gemma 4 government-service navigator for Nepal that does intake, source-routed
 Project Description / Writeup body:
 
 - Paste only the `## Submit This Section` body from
-  `PREVILLAGE_GEMMA4GOOD_SUBMISSION_FINAL.md`.
+  `docs/submission/PREVILLAGE_GEMMA4GOOD_SUBMISSION_FINAL.md`.
 - Do not paste the verification notes or media order into the public body unless
   we intentionally want them visible.
 - Current body length: 1,466 words, under the 1,500-word cap.
@@ -49,7 +49,7 @@ Project Links / Attachments:
 Media Gallery:
 
 - Cover image is required.
-- Use the image order from `PREVILLAGE_GEMMA4GOOD_SUBMISSION_FINAL.md`.
+- Use the image order from `docs/submission/PREVILLAGE_GEMMA4GOOD_SUBMISSION_FINAL.md`.
 - Opening image:
   `assets/previllage-writeup-gallery/hidden_route_four_offices.png`.
 - Then use the technical proof sheet:

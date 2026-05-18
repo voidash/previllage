@@ -3,10 +3,10 @@
 Before changing the helpdesk behavior, RAG, source ranking, SFT data, evals, or
 frontend chat UX, read:
 
-- `SERVICE_NAVIGATOR_MODUS_OPERANDI.md`
+- `docs/architecture/SERVICE_NAVIGATOR_MODUS_OPERANDI.md`
 - `CLAUDE.md`
-- `RAG_HARDENING_STATUS.md`
-- `SFT_V5_POSTMORTEM_AND_NEXT_PASS.md`
+- `docs/architecture/RAG_HARDENING_STATUS.md`
+- `docs/finetuning/SFT_V5_POSTMORTEM_AND_NEXT_PASS.md`
 
 The most important current product rule is:
 

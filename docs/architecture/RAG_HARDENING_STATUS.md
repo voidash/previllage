@@ -5,7 +5,7 @@
 Goal for this pass: stop treating every observed RAG failure as a unique bug,
 and move toward a source-covered, resolver-first government-service navigator.
 The working product contract now lives in
-`SERVICE_NAVIGATOR_MODUS_OPERANDI.md`: resolver/intake before RAG, compact
+`docs/architecture/SERVICE_NAVIGATOR_MODUS_OPERANDI.md`: resolver/intake before RAG, compact
 follow-ups for ambiguity, chat memory, question-dependent source ranking,
 named human practical sources, and contact handoff when useful.
 
