@@ -12,6 +12,10 @@ Parquet/JSONL loading, model-card links, and programmatic access. Kaggle is
 better for hackathon judges and notebook-style exploration. Use Hugging Face as
 the canonical dataset and Kaggle as the submission-friendly mirror.
 
+The small source-controlled front door is [`../datasets/`](../datasets/). It
+contains the public source registry and district routing hints, not the full
+document/chunk export.
+
 ## What To Publish
 
 Start with a "lite" official-source release:

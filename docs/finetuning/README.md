@@ -34,8 +34,9 @@ The important scripts are:
   `scripts/navigator_smoke_audit.py`, `scripts/rag_query_audit.py` - product
   smoke gates.
 
-Small seed/eval examples live in `seeds/`. Large SFT corpora are intentionally
-not committed.
+Reviewer-facing benchmark data lives in [`benchmarks/`](../../benchmarks/).
+Small prompt seeds live in `seeds/`. Large SFT corpora are intentionally not
+committed.
 
 ## Iteration Summary
 

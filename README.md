@@ -20,6 +20,9 @@ from a public writeup.
 - Project map and code layout: [docs/README.md](docs/README.md)
 - Links to share publicly: [docs/LINKS.md](docs/LINKS.md)
 - Fine-tuning and eval trail: [docs/finetuning/README.md](docs/finetuning/README.md)
+- Public dataset entry point: [datasets/README.md](datasets/README.md)
+- Public benchmark entry point: [benchmarks/README.md](benchmarks/README.md)
+- Raspberry Pi / `llama.cpp` edge runbook: [docs/raspberrypi.md](docs/raspberrypi.md)
 - Product/RAG contract: [docs/architecture/SERVICE_NAVIGATOR_MODUS_OPERANDI.md](docs/architecture/SERVICE_NAVIGATOR_MODUS_OPERANDI.md)
 - Corpus release plan: [docs/CORPUS_RELEASE_PLAN.md](docs/CORPUS_RELEASE_PLAN.md)
 
@@ -64,6 +67,19 @@ The core pattern is resolver-first RAG:
 6. Gemma composes from the source pack, preserving language and citing source
    IDs instead of inventing URLs.
 
+## Datasets And Benchmarks
+
+Top-level review paths:
+
+- [datasets/](datasets/) contains small public dataset artifacts such as the
+  source registry and district routing hints.
+- [benchmarks/](benchmarks/) contains public benchmark/eval data for the
+  helpdesk gold set, guard set, navigator smoke tests, RAG smoke tests, and
+  service coverage matrix.
+
+The full government corpus should be released as a versioned Hugging Face
+Dataset and mirrored on Kaggle, not committed to Git. See
+[docs/CORPUS_RELEASE_PLAN.md](docs/CORPUS_RELEASE_PLAN.md).
 
 ## Why Gemma
 
@@ -82,13 +98,24 @@ need a language model:
   customer.
 
 
+For the runnable Pi path, see [docs/raspberrypi.md](docs/raspberrypi.md). The
+short version is:
+
+```bash
+PI_SSH=cdjk@<pi-tailnet-ip> ./scripts/deploy_pi_llamacpp.sh
+BASE_URL=http://<pi-tailnet-ip>:8081 ./scripts/pi_llamacpp_smoke.sh
+```
+
 ## Repository Layout
 
 ```text
 docs/                           Project docs, runbooks, submission notes
   README.md                     Judge-readable map of the repo
   LINKS.md                      Public links and release-status checklist
+  raspberrypi.md                Pi/llama.cpp reviewer runbook
   finetuning/README.md          Fine-tuning path, evals, scripts, artifacts
+datasets/                       Small public dataset artifacts and release notes
+benchmarks/                     Public benchmark data and smoke/eval notes
 server/                         FastAPI RAG, resolver, voice, admin endpoints
 frontend/                       React/Vite web, chat, interview, WhatsApp, kiosk UI
 whatsapp/                       Baileys bridge for real WhatsApp text/audio
@@ -155,4 +182,3 @@ Pi/`llama.cpp` smoke:
 ```bash
 scripts/pi_llamacpp_smoke.sh /path/to/model.gguf
 ```
-

@@ -10,6 +10,9 @@
 | Nepali ASR Space | <https://huggingface.co/spaces/voidash/nepali-fastconformer-demo> |
 | Nepali TTS Space | <https://huggingface.co/spaces/ampixa/real-nepali-tts> |
 | Kala TTS model | <https://huggingface.co/ampixa/real-nepali-v0.2-kala> |
+| Public dataset entry point | [`datasets/`](../datasets/) |
+| Public benchmark entry point | [`benchmarks/`](../benchmarks/) |
+| Raspberry Pi edge runbook | [`docs/raspberrypi.md`](raspberrypi.md) |
 
 ## Should Be Public Before Submission
 

@@ -9,12 +9,15 @@ If you are reviewing the project, read in this order:
 
 1. [Root README](../README.md) - problem, product, architecture, eval headline.
 2. [Links](LINKS.md) - public demo/model/data links and release status.
-3. [Fine-tuning trail](finetuning/README.md) - how Gemma was trained and judged.
-4. [Public architecture](architecture/PREVILLAGE_PUBLIC_ARCHITECTURE.md) -
+3. [Datasets](../datasets/README.md) - public dataset artifacts and release boundary.
+4. [Benchmarks](../benchmarks/README.md) - public eval data and smoke gates.
+5. [Fine-tuning trail](finetuning/README.md) - how Gemma was trained and judged.
+6. [Raspberry Pi edge runbook](raspberrypi.md) - Gemma E2B via `llama.cpp`.
+7. [Public architecture](architecture/PREVILLAGE_PUBLIC_ARCHITECTURE.md) -
    resolver-first RAG, voice, WhatsApp, human loop.
-5. [Service navigator contract](architecture/SERVICE_NAVIGATOR_MODUS_OPERANDI.md)
+8. [Service navigator contract](architecture/SERVICE_NAVIGATOR_MODUS_OPERANDI.md)
    - the product behavior that drives implementation.
-6. [Corpus release plan](CORPUS_RELEASE_PLAN.md) - what should be published as
+9. [Corpus release plan](CORPUS_RELEASE_PLAN.md) - what should be published as
    a dataset and what should stay private/redacted.
 
 ## Code Layout
@@ -27,8 +30,11 @@ If you are reviewing the project, read in this order:
 | `scripts/` | Training, eval, crawl, RAG audit, Pi, ASR/TTS, deployment utilities. |
 | `src/` | Original Rust PDF/corpus pipeline: font conversion, OCR hooks, crawler/index tools. |
 | `recipes/` | Per-domain crawler/source recipes. |
+| `datasets/` | Reviewer-facing public dataset artifacts and dataset release notes. |
+| `benchmarks/` | Reviewer-facing benchmark/eval data and smoke-gate notes. |
 | `corpora/` | Only small public registries are committed. Large corpora/SFT data are ignored. |
 | `assets/` | Curated screenshots/diagrams used by README/submission docs. |
+| `docs/raspberrypi.md` | Short runnable Pi/`llama.cpp` runbook for the edge Gemma claim. |
 | `docs/architecture/` | Product/RAG/crawler architecture and hardening notes. |
 | `docs/finetuning/` | SFT/CPT research, results, recipes, eval history. |
 | `docs/runbooks/` | Demo, Pi, WhatsApp, and deployment runbooks. |
