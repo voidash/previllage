@@ -9,11 +9,9 @@
 | Nepali ASR demo | <https://huggingface.co/spaces/voidash/nepali-fastconformer-demo> | FastConformer experiment for Nepali speech. |
 | Nepali TTS demo | <https://huggingface.co/spaces/ampixa/real-nepali-tts> | Piper/real-Nepali TTS demo. |
 | TTS model | <https://huggingface.co/ampixa/real-nepali-v0.2-kala> | Public Kala voice model. |
-| Source repository | <https://github.com/voidash/previllage> | This repo. |
+| Hugging Face  | <https://huggingface.co/collections/voidash/govspeak-previllage-model-stack> | This repo. |
 
-The Gemma SFT adapters and GGUF builds are staged on Hugging Face. They should
-be made public for a submission or external review before relying on the links
-from a public writeup.
+
 
 ## Start Here For Reviewers
 
