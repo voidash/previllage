@@ -38,7 +38,6 @@ If you are reviewing the project, read in this order:
 | `docs/architecture/` | Product/RAG/crawler architecture and hardening notes. |
 | `docs/finetuning/` | SFT/CPT research, results, recipes, eval history. |
 | `docs/runbooks/` | Demo, Pi, WhatsApp, and deployment runbooks. |
-| `docs/submission/` | Kaggle/Gemma submission writeups, media plans, evidence notes. |
 | `docs/archive/` | Historical plans and logs kept for provenance. |
 
 ## What Is Not In Git
